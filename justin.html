@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="7;url=nextpage.html" /> <!-- 7 seconds redirect -->
+    <title>Water Animation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #0099cc; /* Background color resembling water */
+        }
+
+        .water {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to top, #003366, #0099cc);
+            animation: waterAnimation 7s ease-in-out infinite;
+        }
+
+        @keyframes waterAnimation {
+            0% {
+                transform: translateY(100%);
+            }
+            50% {
+                transform: translateY(-20%);
+            }
+            100% {
+                transform: translateY(100%);
+            }
+        }
+
+        .message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: Arial, sans-serif;
+            font-size: 2rem;
+            color: white;
+            text-align: center;
+            animation: fadeIn 2s forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="water"></div>
+    <div class="message">
+        <p>WELCOME TO THE WEBSITE OF JUSTIN !</p>
+        <P> MPC PRESENTS THE COMPUTER WIZARDS!</p>
+        <p>You will be redirected shortly...</p>
+    </div>
+</body>
+</html>

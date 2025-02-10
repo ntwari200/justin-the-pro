@@ -1,0 +1,19 @@
+import requests
+from bs4 import BeautifulSoup
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    url = 'https://oceanofgames.com/'
+    page = requests.get(url)
+    soup = BeautifulSoup(page.content, 'html.parser')
+    
+    # Find latest updates or games (this would require inspecting the Ocean of Games website)
+    game_updates = soup.find_all('div', class_='game-item')
+    
+    return render_template('home.html', game_updates=game_updates)
+
+if __name__ == '__main__':
+    app.run(debug=True)
